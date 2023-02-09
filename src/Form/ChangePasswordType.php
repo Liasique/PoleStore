@@ -32,12 +32,14 @@ class ChangePasswordType extends AbstractType
                 'disabled' => true,
                 ])
             ->add('old_password', PasswordType::class, [
+                'mapped' => false,
                 'label' => 'Mot de passe actuel',
                 'attr' => [
                     'placeholder' => 'Veuillir saisir votre mot passe actuel',
                 ]
             ])
             ->add('new_password', RepeatedType::class, [
+                'mapped' => false,
                 'type' => PasswordType::class,
                 'invalid_message' => 'les daux mots passe ne correspondent pas ',
                 'required' => true,

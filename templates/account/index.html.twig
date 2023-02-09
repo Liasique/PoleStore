@@ -5,5 +5,15 @@
 
 {% block body %}
 	<h1>Compte</h1>
-    
+
+	<p>
+    Bienvenue sur votre compte <b>{{app.user.firstname}}  {{app.user.lastname}}</b>. <br>
+	Dans ce espace, Vous pouvez modifier vos informations personnelles 
+	<a href=" {{ path('app_logout') }} "> Déconnection</a>
+	</p>
+	<hr>
+	- <a href=" {{ path('account_password') }} "> Modifier mon mot de passe</a> <br>
+	{# - <a href=" {{ path('') }} "> Gérer mes adresses</a> <br>
+	- <a href=" {{ path('') }} "> Mes commandes</a> <br>
+	- <a href=" {{ path('') }} "> Modifier mes inforlations personnelles</a> <br> #}
 {% endblock %}
