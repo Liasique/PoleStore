@@ -46,6 +46,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fas fa-tachometer-alt');
+        yield MenuItem::linkToRoute('Aller à la boutique', 'fas fa-store', 'products');
         yield MenuItem::linkToCrud('Produits', 'fas fa-list-alt', Product::class);
         yield MenuItem::linkToCrud('Catégories', 'fas fa-tag', Category::class);
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-users', User::class);

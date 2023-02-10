@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique Poles{% endblock %}
+
+{% block body %}
+
+    <h1>Boutique Poles: Nos produits</h1>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <a href="">
+                        <img class="img-fluid" src="{{ asset('uploads/' ~ product.illustration) }}" alt="{{ product.name }}">
+                    </a>
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="#">{{ product.name }}</a>
+                        </h5>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="#!" class="btn btn-outline-primary">Order Now</a>
+                    </div>
+                    <small class="text-muted"><b>{{( product.price/ 100 )|number_format(2,',',',')}} £</b></small>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
